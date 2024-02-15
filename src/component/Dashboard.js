@@ -1,118 +1,62 @@
 import React from 'react';
-import { SafeAreaView, TouchableOpacity, View, Text, Image, FlatList, ScrollView } from 'react-native';
+import { TouchableOpacity, Text, FlatList } from 'react-native';
+import { ScrollView } from 'react-native-virtualized-view';
 import PopupModal from './PopupModal';
+import { UseBangun } from '../../context/DataContext';
 
 const Dashboard = () => {
   const [openDatar, setOpenDatar] = React.useState(false);
   const [openRuang, setOpenRuang] = React.useState(true);
   const [modalVisible, setModalVisible] = React.useState(false);
-  const [activeItem, setActiveItem] = React.useState('');
+  const { state, dispatch } = UseBangun();
 
-  const bangunData = [
-    {
-      datar: [
-        {
-          id: 1,
-          source: require(`../../assets/icon.png`),
-          name: 'Persegi',
-        },
-        {
-          id: 2,
-          source: require(`../../assets/icon.png`),
-          name: 'AKOWDA',
-        },
-        {
-          id: 3,
-          source: require(`../../assets/icon.png`),
-          name: 'ACKNASC',
-        },
-        {
-          id: 4,
-          source: require(`../../assets/icon.png`),
-          name: 'askncasjo',
-        },
-        {
-          id: 5,
-          source: require(`../../assets/icon.png`),
-          name: 'askncasjo',
-        },
-        {
-          id: 6,
-          source: require(`../../assets/icon.png`),
-          name: 'askncasjo',
-        },
-        {
-          id: 7,
-          source: require(`../../assets/icon.png`),
-          name: 'askncasjo',
-        },
-      ],
-
-      ruang: [
-        {
-          id: 1,
-          source: require(`../../assets/icon.png`),
-          name: 'afsasdas',
-        },
-        {
-          id: 2,
-          source: require(`../../assets/icon.png`),
-          name: 'afsasdas',
-        },
-        {
-          id: 3,
-          source: require(`../../assets/icon.png`),
-          name: 'afsasdas',
-        },
-      ],
-    },
-  ];
-
-  const touchablePress = (modal, items) => {
+  const touchablePress = (modal, item, jenis) => {
     setModalVisible(modal);
-    setActiveItem(items);
+    if (modal) {
+      dispatch({ type: 'ACTIVE_TOUCH', payload: { ...item, jenis } });
+    } else {
+      dispatch({ type: 'REMOVE_TOUCH' });
+    }
   };
 
   return (
-    <SafeAreaView className="flex-1">
-      <ScrollView className="min-w-full mt-10" contentContainerStyle={{ flexGrow: 1, alignItems: 'center' }}>
-        <Text>Logo</Text>
+    <ScrollView className="min-w-full flex-1 py-12" horizontal={false} nestedScrollEnabled={true} alwaysBounceVertical={false} contentContainerStyle={{ flexGrow: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text className="bg-red-500 p-4 my-4">Logo</Text>
 
-        <TouchableOpacity onPress={() => setOpenDatar(!openDatar)} className="mt-14">
-          <Text>Bangun Datar</Text>
-        </TouchableOpacity>
+      <TouchableOpacity onPress={() => setOpenDatar(!openDatar)} className="mt-14 mb-4 bg-green-400 py-4 px-6 rounded-md">
+        <Text className="font-medium">Bangun Datar</Text>
+      </TouchableOpacity>
 
-        <FlatList
-          data={bangunData[0].datar}
-          renderItem={({ item }) => (
-            <TouchableOpacity className={openDatar ? 'block bg-lime-300 p-4 mb-4' : 'hidden'} onPress={() => touchablePress(true, item)}>
-              {/* <Image alt={item.name} source={item.source} className="block h-5 max-w-full" /> */}
-              <Image alt={item.name} className="block h-5 max-w-full" />
-            </TouchableOpacity>
-          )}
-          keyExtractor={(item) => item.id}
-          className={openDatar ? 'block min-w-full bg-red-700 max-h-60 flex-grow' : 'hidden'}
-        />
+      <FlatList
+        data={state.datar}
+        renderItem={({ item }) => (
+          <TouchableOpacity className={openDatar ? 'block bg-lime-300 p-4 mb-4' : 'hidden'} onPress={() => touchablePress(true, item, 'datar')}>
+            {/* <Image alt={item.name} source={item.source} className="block h-5 max-w-full" /> */}
+            {/* <Image alt={items.name} className="block h-5 max-w-full" /> */}
+          </TouchableOpacity>
+        )}
+        keyExtractor={(item) => item.id}
+        className={openDatar ? 'block min-w-full' : 'hidden'}
+      />
 
-        <PopupModal modalVisible={modalVisible} setModalVisible={setModalVisible} touchablePress={touchablePress} activeItem={activeItem} />
+      <TouchableOpacity onPress={() => setOpenRuang(!openRuang)} className="mt-14 mb-4 bg-green-400 py-4 px-6 rounded-md">
+        <Text>Bangun Ruang</Text>
+      </TouchableOpacity>
 
-        <TouchableOpacity onPress={() => setOpenRuang(!openRuang)} className="mt-14">
-          <Text>Bangun Ruang</Text>
-        </TouchableOpacity>
+      <FlatList
+        data={state.ruang}
+        renderItem={({ item }) => (
+          <TouchableOpacity className={openRuang ? 'block bg-lime-300 p-4 mb-4' : 'hidden'} onPress={() => touchablePress(true, item, 'ruang')}>
+            {/* <Image alt={item.name} source={item.source} className="block h-5 max-w-full" /> */}
+            {/* <Image alt={items.name} className="block h-5 max-w-full" /> */}
+          </TouchableOpacity>
+        )}
+        keyExtractor={(item) => item.id}
+        className={openRuang ? 'block min-w-full mb-40' : 'hidden'}
+      />
 
-        <FlatList
-          data={bangunData[0].ruang}
-          renderItem={({ item }) => (
-            <TouchableOpacity className={openRuang ? 'block bg-lime-300 p-4 mb-4' : 'hidden'} onPress={() => touchablePress(true, item)}>
-              {/* <Image alt={item.name} source={item.source} className="block h-5 max-w-full" /> */}
-              <Image alt={item.name} className="block h-5 max-w-full" />
-            </TouchableOpacity>
-          )}
-          keyExtractor={(item) => item.id}
-          className={openRuang ? 'block min-w-full bg-red-700 max-h-60 flex-grow' : 'hidden'}
-        />
-      </ScrollView>
-    </SafeAreaView>
+      <PopupModal modalVisible={modalVisible} setModalVisible={setModalVisible} touchablePress={touchablePress} />
+    </ScrollView>
   );
 };
 

@@ -1,6 +1,10 @@
 import { Image, Modal, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import DropdownCheck from './DropdownCheck';
+import { UseBangun } from '../../context/DataContext';
 
-const PopupModal = ({ modalVisible, setModalVisible, activeItem, touchablePress }) => {
+const PopupModal = ({ modalVisible, setModalVisible, touchablePress }) => {
+  const { state } = UseBangun();
+
   return (
     <View>
       <Modal
@@ -14,7 +18,8 @@ const PopupModal = ({ modalVisible, setModalVisible, activeItem, touchablePress 
         <View className="flex-1 justify-center mt-6 bg-[#303030]">
           <View style={styles.modalView}>
             <Image alt="Persegi" width={50} height={50} className="bg-red-500" />
-            <Text style={styles.modalText}>{activeItem?.name}</Text>
+            <Text style={styles.modalText}>{state.active?.name}</Text>
+            <DropdownCheck name={state?.active?.name} />
             <TouchableOpacity style={[styles.button, styles.buttonClose]} onPress={() => touchablePress(false, '')}>
               <Text style={styles.textStyle}>Hide Modal</Text>
             </TouchableOpacity>
