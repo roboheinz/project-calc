@@ -56,7 +56,16 @@ const InputKeliling = ({ valueDropdown, name }) => {
   return (
     <View className="min-w-full">
       {valueDropdown == 1
-        ? Object.entries(keliling).map(([key], index) => <TextInput key={index} value={keliling.key} keyboardType="number-pad" placeholder={`Masukkan ${key}`} onChangeText={(text) => countResult(Number(text), key)} />)
+        ? Object.entries(keliling).map(([key], index) => (
+            <TextInput
+              key={index}
+              // className="mt-1 w-full rounded-md border-gray-200 shadow-sm sm:text-sm"
+              value={keliling.key}
+              keyboardType="number-pad"
+              placeholder={`Masukkan ${key}`}
+              onChangeText={(text) => countResult(Number(text), key)}
+            />
+          ))
         : ''}
 
       <TouchableOpacity onPress={seeResult} title="Lihat Hasil" className="px-6 py-4 w-[200px] bg-green-500">

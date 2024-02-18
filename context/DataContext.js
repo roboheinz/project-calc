@@ -129,17 +129,15 @@ const data = {
     {
       id: 1,
       source: require(`../assets/icon.png`),
-      name: 'afsasdas',
-    },
-    {
-      id: 2,
-      source: require(`../assets/icon.png`),
-      name: 'afsasdas',
-    },
-    {
-      id: 3,
-      source: require(`../assets/icon.png`),
-      name: 'afsasdas',
+      name: 'Kubus',
+      countInput: {
+        luas: {
+          Sisi: 0,
+        },
+        keliling: {
+          Sisi: 0,
+        },
+      },
     },
   ],
 };
