@@ -1,10 +1,7 @@
-import { useState } from 'react';
 import { StyleSheet } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 
-const DropdownCheck = ({ name }) => {
-  const [value, setValue] = useState(null);
-
+const DropdownCheck = ({ name, value, setValue }) => {
   const data = [
     { label: `Keliling ${name}`, value: '1' },
     { label: `Luas ${name}`, value: '2' },
