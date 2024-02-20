@@ -131,11 +131,102 @@ const data = {
       source: require(`../assets/icon.png`),
       name: 'Kubus',
       countInput: {
-        luas: {
-          Sisi: 0,
+        volume: {
+          Rusuk: 0,
         },
-        keliling: {
-          Sisi: 0,
+        luasPermukaan: {
+          Rusuk: 0,
+        },
+      },
+    },
+    {
+      id: 2,
+      source: require(`../assets/icon.png`),
+      name: 'Balok',
+      countInput: {
+        volume: {
+          Panjang: 0,
+          Lebar: 0,
+          Tinggi: 0,
+        },
+        luasPermukaan: {
+          Panjang: 0,
+          Lebar: 0,
+          Tinggi: 0,
+        },
+      },
+    },
+    {
+      id: 3,
+      source: require(`../assets/icon.png`),
+      name: 'Prisma Segitiga',
+      countInput: {
+        volume: {
+          'Luas Alas': 0,
+          Tinggi: 0,
+        },
+        luasPermukaan: {
+          'Luas Alas': 0,
+          'Keliling Alas': 0,
+          Tinggi: 0,
+        },
+      },
+    },
+    {
+      id: 4,
+      source: require(`../assets/icon.png`),
+      name: 'Kerucut',
+      countInput: {
+        volume: {
+          Rusuk: 0,
+          Tinggi: 0,
+        },
+        luasPermukaan: {
+          Rusuk: 0,
+          'Garis Pelukis': 0,
+        },
+      },
+    },
+    {
+      id: 5,
+      source: require(`../assets/icon.png`),
+      name: 'Limas Segitiga',
+      countInput: {
+        volume: {
+          'Luas Alas': 0,
+          Tinggi: 0,
+        },
+        luasPermukaan: {
+          'Luas Alas': 0,
+          'Total Luas Sisi Miring': 0,
+        },
+      },
+    },
+    {
+      id: 6,
+      source: require(`../assets/icon.png`),
+      name: 'Bola',
+      countInput: {
+        volume: {
+          Rusuk: 0,
+        },
+        luasPermukaan: {
+          Rusuk: 0,
+        },
+      },
+    },
+    {
+      id: 7,
+      source: require(`../assets/icon.png`),
+      name: 'Tabung',
+      countInput: {
+        volume: {
+          Rusuk: 0,
+          Tinggi: 0,
+        },
+        luasPermukaan: {
+          Rusuk: 0,
+          Tinggi: 0,
         },
       },
     },
@@ -154,7 +245,7 @@ export const bangunReducer = (state, action) => {
   switch (action.type) {
     case 'ACTIVE_TOUCH':
       const datas = state[action.payload.jenis][action.payload.id - 1];
-      return { ...state, active: { ...datas } };
+      return { ...state, active: { ...datas, category: action.payload.jenis } };
     case 'REMOVE_TOUCH':
       delete state.active;
       return { ...state };

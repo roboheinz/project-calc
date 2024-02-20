@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { Dropdown } from 'react-native-element-dropdown';
 
-const DropdownCheck = ({ name, value, setValue }) => {
+const DropdownCheckDatar = ({ name, value, setValue }) => {
   const data = [
     { label: `Keliling ${name}`, value: '1' },
     { label: `Luas ${name}`, value: '2' },
@@ -56,4 +56,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DropdownCheck;
+export default DropdownCheckDatar;
