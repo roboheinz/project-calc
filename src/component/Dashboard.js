@@ -1,8 +1,9 @@
 import React from 'react';
-import { TouchableOpacity, Text, FlatList, View } from 'react-native';
+import { TouchableOpacity, Text, Image, FlatList, View } from 'react-native';
 import { ScrollView } from 'react-native-virtualized-view';
 import PopupModal from './PopupModal';
 import { UseBangun } from '../../context/DataContext';
+import Holofive from "../../assets/Holofive.svg";
 
 const Dashboard = () => {
   const [openDatar, setOpenDatar] = React.useState(false);
@@ -20,11 +21,14 @@ const Dashboard = () => {
   };
 
   return (
-    <ScrollView className="min-w-full flex-1" horizontal={false} nestedScrollEnabled={true} alwaysBounceVertical={false} contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}>
-      <Text className="bg-red-500 p-4 text-white text-center">Logo</Text>
+    <ScrollView className="min-w-full flex-1 bg-[#FFD1E3]" horizontal={false} nestedScrollEnabled={true} alwaysBounceVertical={false} contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}>
+      <View className='mx-auto'>
+        <Holofive width="300" height="300"/>
+      </View>
 
-      <TouchableOpacity onPress={() => setOpenDatar(!openDatar)} className="my-2 bg-green-400 py-4 px-6 rounded-md">
-        <Text className="font-medium text-center">Bangun Datar</Text>
+
+      <TouchableOpacity onPress={() => setOpenDatar(!openDatar)} className="w-11/12 mx-auto mt-10 mb-2 px-6 py-4 bg-[#392467] rounded-md">
+        <Text className="font-medium text-xl text-center text-white">Bangun Datar</Text>
       </TouchableOpacity>
 
       {openDatar && (
@@ -32,10 +36,10 @@ const Dashboard = () => {
           <FlatList
             data={state.datar}
             renderItem={({ item }) => (
-              <TouchableOpacity className={'block bg-lime-300 p-4 my-2'} onPress={() => touchablePress(true, item, 'datar')}>
-                {/* <Image alt={item.name} source={item.source} className="block h-5 max-w-full" /> */}
+              <TouchableOpacity className={'w-11/12 mx-auto my-2 p-4 bg-[#5D3587]  block'} onPress={() => touchablePress(true, item, 'datar')}>
+                <Image alt={item.name} source={item.source} className="block h-5 max-w-full" />
                 {/* <Image alt={items.name} className="block h-5 max-w-full" /> */}
-                <Text className="text-center">{item.name}</Text>
+                <Text className="text-center text-white">{item.name}</Text>
               </TouchableOpacity>
             )}
             keyExtractor={(item) => item.id}
@@ -44,8 +48,8 @@ const Dashboard = () => {
         </View>
       )}
 
-      <TouchableOpacity onPress={() => setOpenRuang(!openRuang)} className="mb-2 bg-green-400 py-4 px-6 rounded-md">
-        <Text className="font-medium text-center ">Bangun Ruang</Text>
+      <TouchableOpacity onPress={() => setOpenRuang(!openRuang)} className="w-11/12 mx-auto mt-10 mb-2 px-6 py-4 bg-[#392467]  rounded-md">
+        <Text className="font-medium text-xl text-center text-white">Bangun Ruang</Text>
       </TouchableOpacity>
 
       {openRuang && (
@@ -53,10 +57,10 @@ const Dashboard = () => {
           <FlatList
             data={state.ruang}
             renderItem={({ item }) => (
-              <TouchableOpacity className={'block bg-lime-300 p-4 my-2'} onPress={() => touchablePress(true, item, 'ruang')}>
+              <TouchableOpacity className={'w-11/12 mx-auto my-2 p-4 bg-[#5D3587] block'} onPress={() => touchablePress(true, item, 'ruang')}>
                 {/* <Image alt={item.name} source={item.source} className="block h-5 max-w-full" /> */}
                 {/* <Image alt={items.name} className="block h-5 max-w-full" /> */}
-                <Text className="text-center">{item.name}</Text>
+                <Text className="text-center text-white">{item.name}</Text>
               </TouchableOpacity>
             )}
             keyExtractor={(item) => item.id}

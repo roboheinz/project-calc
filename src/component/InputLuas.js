@@ -57,11 +57,11 @@ const InputLuas = ({ valueDropdown, name }) => {
     <View className="min-w-full">
       {valueDropdown == 2 ? Object.entries(luas).map(([key], index) => <TextInput key={index} value={luas.key} keyboardType="number-pad" placeholder={`Masukkan ${key}`} onChangeText={(text) => countResult(Number(text), key)} />) : ''}
 
-      <TouchableOpacity onPress={seeResult} title="Lihat Hasil" className="px-6 py-4 w-[200px] bg-green-500">
-        <Text>Lihat Hasil</Text>
+      <TouchableOpacity onPress={seeResult} title="Lihat Hasil" className="px-6 py-4 w-[200px] bg-[#392467]">
+        <Text className='text-white'>Lihat Hasil</Text>
       </TouchableOpacity>
 
-      <Text>Result : {result}</Text>
+      <Text>Result : <Text className="font-bold">{result}</Text></Text>
     </View>
   );
 };

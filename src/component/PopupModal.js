@@ -22,7 +22,7 @@ const PopupModal = ({ modalVisible, setModalVisible }) => {
           setModalVisible(false);
         }}
       >
-        <View className="flex-1 justify-center mt-6 bg-[#303030]">
+        <View className="flex-1 justify-center bg-[#303030]">
           <View style={styles.modalView}>
             <Image alt="Persegi" width={50} height={50} className="bg-red-500" />
             <Text style={styles.modalText}>{state.active.name}</Text>
@@ -42,7 +42,7 @@ const PopupModal = ({ modalVisible, setModalVisible }) => {
               ''
             )}
             <TouchableOpacity style={[styles.button, styles.buttonClose]} onPress={() => setModalVisible(false)}>
-              <Text style={styles.textStyle}>Hide Modal</Text>
+              <Text style={styles.textStyle}>Close</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -54,7 +54,7 @@ const PopupModal = ({ modalVisible, setModalVisible }) => {
 const styles = StyleSheet.create({
   modalView: {
     margin: 20,
-    backgroundColor: 'white',
+    backgroundColor: '#FFD1E3',
     borderRadius: 20,
     padding: 35,
     alignItems: 'center',
@@ -63,21 +63,22 @@ const styles = StyleSheet.create({
       width: 0,
       height: 2,
     },
+
     shadowOpacity: 0.25,
     shadowRadius: 4,
     elevation: 5,
   },
+
   button: {
     borderRadius: 20,
     padding: 10,
     elevation: 2,
   },
-  buttonOpen: {
-    backgroundColor: '#F194FF',
-  },
+
   buttonClose: {
-    backgroundColor: '#2196F3',
+    backgroundColor: '#5D3587',
   },
+
   textStyle: {
     color: 'white',
     fontWeight: 'bold',
