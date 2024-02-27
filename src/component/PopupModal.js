@@ -24,8 +24,17 @@ const PopupModal = ({ modalVisible, setModalVisible }) => {
       >
         <View className="flex-1 justify-center bg-[#303030]">
           <View style={styles.modalView}>
-            <Image alt="Persegi" width={50} height={50} className="bg-red-500" />
-            <Text style={styles.modalText}>{state.active.name}</Text>
+            {/* IMAGE */}
+            {value == 1 ? (
+              <Image alt={`${state.active.name}`} className="min-w-[200px]" source={state.active.sourceSecondary} />
+            ) : value == 2 ? (
+              <Image alt={`${state.active.name}`} className="min-w-[200px]" source={state.active.sourceThird} />
+            ) : (
+              <Image alt={`${state.active.name}`} className="min-w-[200px]" source={state.active.source} />
+            )}
+            {/* IMAGE */}
+
+            {/* DropDown Category */}
             {state.active.category == 'datar' ? <DropdownCheckDatar name={state.active.name} value={value} setValue={setValue} /> : <DropdownCheckRuang name={state.active.name} value={value} setValue={setValue} />}
             {value == 1 && state.active.category == 'datar' ? (
               <InputKeliling valueDropdown={value} name={state.active.name} />
@@ -41,7 +50,9 @@ const PopupModal = ({ modalVisible, setModalVisible }) => {
             ) : (
               ''
             )}
-            <TouchableOpacity style={[styles.button, styles.buttonClose]} onPress={() => setModalVisible(false)}>
+            {/* DropDown Category */}
+
+            <TouchableOpacity activeOpacity={0.5} style={[styles.button, styles.buttonClose]} onPress={() => setModalVisible(false)}>
               <Text style={styles.textStyle}>Close</Text>
             </TouchableOpacity>
           </View>

@@ -64,16 +64,18 @@ const InputKeliling = ({ valueDropdown, name }) => {
               keyboardType="number-pad"
               placeholder={`Masukkan ${key}`}
               onChangeText={(text) => countResult(Number(text), key)}
-              className="underline-offset-2 underline"
+              className="border-b my-2 py-1 border-b-[#392467] text-base px-2"
             />
           ))
         : ''}
 
-      <TouchableOpacity onPress={seeResult} title="Lihat Hasil" className="w-[200px] px-6 py-4 bg-[#392467]">
-        <Text className="text-white">Lihat Hasil</Text>
+      <TouchableOpacity onPress={seeResult} title="Lihat Hasil" activeOpacity={0.8} className="w-[200px] my-4 rounded-lg py-2.5 bg-[#392467]">
+        <Text className="text-white text-center">Lihat Hasil</Text>
       </TouchableOpacity>
 
-      <Text>Result : <Text className="font-bold">{result}</Text></Text>
+      <Text className="text-base p-2 mb-2">
+        Result : <Text className="font-bold">{result}</Text>
+      </Text>
     </View>
   );
 };

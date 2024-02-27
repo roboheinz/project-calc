@@ -6,7 +6,9 @@ const data = {
   datar: [
     {
       id: 1,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/persegi-polosan.png`),
+      sourceSecondary: require(`../assets/persegi-keliling.png`),
+      sourceThird: require(`../assets/persegi-luas.png`),
       name: 'Persegi',
       countInput: {
         luas: {
@@ -19,7 +21,9 @@ const data = {
     },
     {
       id: 2,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/persegiPanjang-polosan.png`),
+      sourceSecondary: require(`../assets/persegiPanjang-keliling.png`),
+      sourceThird: require(`../assets/persegiPanjang-luas.png`),
       name: 'Persegi Panjang',
       countInput: {
         luas: {
@@ -34,7 +38,9 @@ const data = {
     },
     {
       id: 3,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/segitiga-polosan.png`),
+      sourceSecondary: require(`../assets/segitiga-keliling.png`),
+      sourceThird: require(`../assets/segitiga-luas.png`),
       name: 'Segitiga',
       countInput: {
         luas: {
@@ -50,7 +56,9 @@ const data = {
     },
     {
       id: 4,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/lingkaran-polosan.png`),
+      sourceSecondary: require(`../assets/lingkaran-keliling.png`),
+      sourceThird: require(`../assets/lingkaran-luas.png`),
       name: 'Lingkaran',
       countInput: {
         luas: {
@@ -63,7 +71,9 @@ const data = {
     },
     {
       id: 5,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/trapesium-polosan.png`),
+      sourceSecondary: require(`../assets/trapesium-keliling.png`),
+      sourceThird: require(`../assets/trapesium-luas.png`),
       name: 'Trapesium',
       countInput: {
         luas: {
@@ -81,7 +91,9 @@ const data = {
     },
     {
       id: 6,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/jajarGenjang-polosan.png`),
+      sourceSecondary: require(`../assets/jajarGenjang-keliling.png`),
+      sourceThird: require(`../assets/jajarGenjang-luas.png`),
       name: 'Jajar Genjang',
       countInput: {
         luas: {
@@ -96,7 +108,9 @@ const data = {
     },
     {
       id: 7,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/layangLayang-polosan.png`),
+      sourceSecondary: require(`../assets/layangLayang-keliling.png`),
+      sourceThird: require(`../assets/layangLayang-luas.png`),
       name: 'Layang Layang',
       countInput: {
         luas: {
@@ -111,7 +125,9 @@ const data = {
     },
     {
       id: 8,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/belahKetupat-polosan.png`),
+      sourceSecondary: require(`../assets/belahKetupat-keliling.png`),
+      sourceThird: require(`../assets/belahKetupat-luas.png`),
       name: 'Belah Ketupat',
       countInput: {
         luas: {
