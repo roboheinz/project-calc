@@ -144,7 +144,9 @@ const data = {
   ruang: [
     {
       id: 1,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/kubus-polosan.png`),
+      sourceSecondary: require(`../assets/kubus-volume.png`),
+      sourceThird: require(`../assets/kubus-luasPermukaan.png`),
       name: 'Kubus',
       countInput: {
         volume: {
@@ -157,7 +159,9 @@ const data = {
     },
     {
       id: 2,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/balok-polosan.png`),
+      sourceSecondary: require(`../assets/balok-volume.png`),
+      sourceThird: require(`../assets/balok-luasPermukaan.png`),
       name: 'Balok',
       countInput: {
         volume: {
@@ -174,7 +178,9 @@ const data = {
     },
     {
       id: 3,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/prismaSegitiga-polosan.png`),
+      sourceSecondary: require(`../assets/prismaSegitiga-volume.png`),
+      sourceThird: require(`../assets/prismaSegitiga-luasPermukaan.png`),
       name: 'Prisma Segitiga',
       countInput: {
         volume: {
@@ -190,7 +196,9 @@ const data = {
     },
     {
       id: 4,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/kerucut-polosan.png`),
+      sourceSecondary: require(`../assets/kerucut-volume.png`),
+      sourceThird: require(`../assets/kerucut-luasPermukaan.png`),
       name: 'Kerucut',
       countInput: {
         volume: {
@@ -205,7 +213,9 @@ const data = {
     },
     {
       id: 5,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/limasSegitiga-polosan.png`),
+      sourceSecondary: require(`../assets/limasSegitiga-volume.png`),
+      sourceThird: require(`../assets/limasSegitiga-luasPermukaan.png`),
       name: 'Limas Segitiga',
       countInput: {
         volume: {
@@ -220,7 +230,9 @@ const data = {
     },
     {
       id: 6,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/bola-polosan.png`),
+      sourceSecondary: require(`../assets/bola-volume.png`),
+      sourceThird: require(`../assets/bola-luasPermukaan.png`),
       name: 'Bola',
       countInput: {
         volume: {
@@ -233,7 +245,9 @@ const data = {
     },
     {
       id: 7,
-      source: require(`../assets/icon.png`),
+      source: require(`../assets/tabung-polosan.png`),
+      sourceSecondary: require(`../assets/tabung-volume.png`),
+      sourceThird: require(`../assets/tabung-luasPermukaan.png`),
       name: 'Tabung',
       countInput: {
         volume: {

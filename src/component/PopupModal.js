@@ -26,11 +26,11 @@ const PopupModal = ({ modalVisible, setModalVisible }) => {
           <View style={styles.modalView}>
             {/* IMAGE */}
             {value == 1 ? (
-              <Image alt={`${state.active.name}`} className="min-w-[200px]" source={state.active.sourceSecondary} />
+              <Image alt={`${state.active.name}`} className="w-[200px]" source={state.active.sourceSecondary} />
             ) : value == 2 ? (
-              <Image alt={`${state.active.name}`} className="min-w-[200px]" source={state.active.sourceThird} />
+              <Image alt={`${state.active.name}`} className="w-[200px]" source={state.active.sourceThird} />
             ) : (
-              <Image alt={`${state.active.name}`} className="min-w-[200px]" source={state.active.source} />
+              <Image alt={`${state.active.name}`} className="w-[200px]" source={state.active.source} />
             )}
             {/* IMAGE */}
 

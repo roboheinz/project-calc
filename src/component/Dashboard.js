@@ -28,12 +28,12 @@ const Dashboard = () => {
       alwaysBounceVertical={false}
       contentContainerStyle={{ flexGrow: 1, justifyContent: 'center' }}
     >
-      <View className="mx-auto">
+      <View className={modalVisible ? 'hidden' : 'mx-auto block'}>
         <Holofive width="300" height="300" />
       </View>
 
       <TouchableOpacity onPress={() => setOpenDatar(!openDatar)} className="w-11/12 mx-auto mt-10 mb-2 px-6 py-4 bg-[#392467] rounded-md">
-        <Text className="font-medium text-xl text-center text-white">Bangun Datar</Text>
+        <Text className={modalVisible ? 'hidden' : 'font-medium text-xl text-center text-white'}>Bangun Datar</Text>
       </TouchableOpacity>
 
       {openDatar && (
@@ -41,17 +41,17 @@ const Dashboard = () => {
           <FlatList
             data={state.datar}
             renderItem={({ item }) => (
-              <TouchableOpacity className={'w-11/12 mx-auto my-2 p-4 bg-[#5D3587] rounded-md block'} onPress={() => touchablePress(true, item, 'datar')}>
+              <TouchableOpacity activeOpacity={0.8} className={'w-11/12 mx-auto my-2 p-4 bg-[#5D3587] rounded-md block'} onPress={() => touchablePress(true, item, 'datar')}>
                 <Text className="text-center text-white text-base">{item.name}</Text>
               </TouchableOpacity>
             )}
             keyExtractor={(item) => item.id}
-            className={'min-w-full'}
+            className={modalVisible ? 'hidden' : 'min-w-full'}
           />
         </View>
       )}
 
-      <TouchableOpacity onPress={() => setOpenRuang(!openRuang)} className="w-11/12 mx-auto mt-10 mb-2 px-6 py-4 bg-[#392467]  rounded-md">
+      <TouchableOpacity onPress={() => setOpenRuang(!openRuang)} className={modalVisible ? 'hidden' : 'w-11/12 mx-auto mt-10 mb-2 px-6 py-4 bg-[#392467] rounded-md block'}>
         <Text className="font-medium text-xl text-center text-white">Bangun Ruang</Text>
       </TouchableOpacity>
 
@@ -60,12 +60,12 @@ const Dashboard = () => {
           <FlatList
             data={state.ruang}
             renderItem={({ item }) => (
-              <TouchableOpacity className={'w-11/12 mx-auto my-2 p-4 bg-[#5D3587] rounded-md block'} onPress={() => touchablePress(true, item, 'ruang')}>
+              <TouchableOpacity activeOpacity={0.8} className={'w-11/12 mx-auto my-2 p-4 bg-[#5D3587] rounded-md block'} onPress={() => touchablePress(true, item, 'ruang')}>
                 <Text className="text-center text-white text-base">{item.name}</Text>
               </TouchableOpacity>
             )}
             keyExtractor={(item) => item.id}
-            className={'block min-w-full'}
+            className={modalVisible ? 'hidden' : 'block min-w-full'}
           />
         </View>
       )}
