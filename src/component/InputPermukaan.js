@@ -28,19 +28,19 @@ const InputPermukaan = ({ valueDropdown, name }) => {
         setResult(count);
         break;
       case 'kerucut':
-        count = 3.14 * isLuasPermukaan.Rusuk * (isLuasPermukaan.Rusuk + isLuasPermukaan['Garis Pelukis']);
+        count = 3.14 * isLuasPermukaan['Jari Jari'] * (isLuasPermukaan['Jari Jari'] + isLuasPermukaan['Garis Pelukis']);
         setResult(count);
         break;
-      case 'limas segitiga':
+      case 'limas segiempat':
         count = isLuasPermukaan['Luas Alas'] + isLuasPermukaan['Total Luas Sisi Miring'];
         setResult(count);
         break;
       case 'bola':
-        count = 4 * 3.14 * isLuasPermukaan.Rusuk ** 2;
+        count = 4 * 3.14 * isLuasPermukaan['Jari Jari'] ** 2;
         setResult(count);
         break;
       case 'tabung':
-        count = 2 * 3.14 * isLuasPermukaan.Rusuk * (isLuasPermukaan.Tinggi + isLuasPermukaan.Rusuk);
+        count = 2 * 3.14 * isLuasPermukaan['Jari Jari'] * (isLuasPermukaan.Tinggi + isLuasPermukaan['Jari Jari']);
         setResult(count);
         break;
       default:

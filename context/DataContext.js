@@ -62,10 +62,10 @@ const data = {
       name: 'Lingkaran',
       countInput: {
         luas: {
-          Rusuk: 0,
+          'Jari Jari': 0,
         },
         keliling: {
-          Rusuk: 0,
+          'Jari Jari': 0,
         },
       },
     },
@@ -202,21 +202,21 @@ const data = {
       name: 'Kerucut',
       countInput: {
         volume: {
-          Rusuk: 0,
+          'Jari Jari': 0,
           Tinggi: 0,
         },
         luasPermukaan: {
-          Rusuk: 0,
+          'Jari Jari': 0,
           'Garis Pelukis': 0,
         },
       },
     },
     {
       id: 5,
-      source: require(`../assets/limasSegitiga-polosan.png`),
-      sourceSecondary: require(`../assets/limasSegitiga-volume.png`),
-      sourceThird: require(`../assets/limasSegitiga-luasPermukaan.png`),
-      name: 'Limas Segitiga',
+      source: require(`../assets/limasSegiempat-polosan.png`),
+      sourceSecondary: require(`../assets/limasSegiempat-volume.png`),
+      sourceThird: require(`../assets/limasSegiempat-luasPermukaan.png`),
+      name: 'Limas Segiempat',
       countInput: {
         volume: {
           'Luas Alas': 0,
@@ -236,10 +236,10 @@ const data = {
       name: 'Bola',
       countInput: {
         volume: {
-          Rusuk: 0,
+          'Jari Jari': 0,
         },
         luasPermukaan: {
-          Rusuk: 0,
+          'Jari Jari': 0,
         },
       },
     },
@@ -251,11 +251,11 @@ const data = {
       name: 'Tabung',
       countInput: {
         volume: {
-          Rusuk: 0,
+          'Jari Jari': 0,
           Tinggi: 0,
         },
         luasPermukaan: {
-          Rusuk: 0,
+          'Jari Jari': 0,
           Tinggi: 0,
         },
       },

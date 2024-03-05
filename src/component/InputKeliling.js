@@ -28,7 +28,7 @@ const InputKeliling = ({ valueDropdown, name }) => {
         setResult(count);
         break;
       case 'lingkaran':
-        count = 2 * isKeliling.Rusuk * 3.14;
+        count = 2 * isKeliling['Jari Jari'] * 3.14;
         setResult(count);
         break;
       case 'trapesium':

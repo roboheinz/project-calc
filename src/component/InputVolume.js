@@ -28,19 +28,19 @@ const InputVolume = ({ valueDropdown, name }) => {
         setResult(count);
         break;
       case 'kerucut':
-        count = (3.14 * isVolume.Rusuk ** 2 * isVolume.Tinggi) / 3;
+        count = (3.14 * isVolume['Jari Jari'] ** 2 * isVolume.Tinggi) / 3;
         setResult(count);
         break;
-      case 'limas segitiga':
+      case 'limas segiempat':
         count = (isVolume['Luas Alas'] * isVolume.Tinggi) / 3;
         setResult(count);
         break;
       case 'bola':
-        count = (4 / 3) * 3.14 * isVolume.Rusuk ** 3;
+        count = (4 / 3) * 3.14 * isVolume['Jari Jari'] ** 3;
         setResult(count);
         break;
       case 'tabung':
-        count = 3.14 * isVolume.Rusuk ** 2 * isVolume.Tinggi;
+        count = 3.14 * isVolume['Jari Jari'] ** 2 * isVolume.Tinggi;
         setResult(count);
         break;
       default:

@@ -28,7 +28,7 @@ const InputLuas = ({ valueDropdown, name }) => {
         setResult(count);
         break;
       case 'lingkaran':
-        count = 3.14 * isLuas.Rusuk ** 2;
+        count = 3.14 * isLuas['Jari Jari'] ** 2;
         setResult(count);
         break;
       case 'trapesium':
